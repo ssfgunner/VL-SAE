@@ -12,3 +12,4 @@ idea/
 .ipynb_checkpoints/
 pretrained_models/
 concept_images/
+concept2data/
