@@ -1,0 +1,20 @@
+<image>
+actor in a black tuxedo
+<image>
+actor in a black suit
+<image>
+actor in a black # suit
+<image>
+actor in a grey tuxedo
+<image>
+actor in a blue tuxedo
+<image>
+actor in a white suit
+<image>
+actor in an all black suit .
+<image>
+actor in a black tuxedo
+<image>
+comedian in a black and white suit
+<image>
+actor in a grey suit
