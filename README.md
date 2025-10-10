@@ -37,7 +37,7 @@ For OpenCLIP-ViT-B/32, download the pre-trained VL-SAE weights ([SAE weights](ht
 
 For LLaVA 1.5, download the the pre-trained VL-SAE ([SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_256_8_best.pth), [Auxiliary AE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_aux_best.pt), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/c2d_llava_256_8.json)) and put it under ``lvlms/demo``.
 
-We present the demo of VL-SAE with OpenCLIP and LLaVA 1.5 in ``/cvlms/demo/demo.ipynb`` and ``/lvlms/demo/demo.ipynb``, respectively.
+We present the demo of VL-SAE with OpenCLIP and LLaVA 1.5 in ``cvlms/demo/demo.ipynb`` and ``lvlms/demo/demo.ipynb``, respectively.
 
 ## Pre-trained Models
 
@@ -110,7 +110,7 @@ python concept2data.py --topk 256 --ckpt-path ../sae_trainer/sae_weights/opencli
 
 Integrate the pre-trained VL-SAE into the inference process of LLaVA 1.5 to eliminate hallucinations.
 
-First, download the validation images & annotations of COCO 2014 and put it under ``lvlms/VCD/data/coco``.
+First, download the [validation images](http://images.cocodataset.org/zips/val2014.zip) & [annotations](http://images.cocodataset.org/annotations/annotations_trainval2014.zip) of COCO 2014 and put it under ``lvlms/VCD/data/coco``.
 
 Then, run the provided scripts to evaluate the performance of VL-SAE on different benchmarks.
 
