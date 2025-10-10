@@ -10,7 +10,7 @@ from tqdm import tqdm
 
 def parse_args():
     parser = argparse.ArgumentParser(description='save the concept interpretation for specific SAE weights')
-    parser.add_argument('--topk', type=int, default=128, help='Top k concepts')
+    parser.add_argument('--topk', type=int, default=256, help='Top k concepts')
     parser.add_argument('--ckpt-path', type=str, default=None, help='Checkpoint path of SAE')
     parser.add_argument('--image-dir', type=str, default="../../CC3M/cc3m_jpg", help='Path to images')
     parser.add_argument('--text_embeddings_path', type=str, default="../representation_collection/activations/ViT-B-32_text_embeddings.pt", help='Path to text embeddings')

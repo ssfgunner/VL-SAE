@@ -31,15 +31,29 @@ python cc3m_meta.py
 
 ## Quick Start
 
-Download the pre-trained weights and put it under 
+Download LLaVA 1.5 and put it under ``pretrained_models``
 
-Download the metadata of pre-trained SAE and put it under
+For OpenCLIP-ViT-B/32, download the pre-trained VL-SAE weights ([SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/openclip_ViT-B-32_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/c2d_openclip_ViT-B-32_256_8.json)) and put it under ``cvlms/demo``.
 
-We present the inference demo of VL-SAE with OpenCLIP and LLaVA 1.5 in ``./cvlms/demo/demo.ipynb`` and ``./lvlms/demo/demo.ipynb``, respectively.
+For LLaVA 1.5, download the the pre-trained VL-SAE ([SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_256_8_best.pth), [Auxiliary AE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_aux_best.pt), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/c2d_llava_256_8.json)) and put it under ``lvlms/demo``.
+
+We present the demo of VL-SAE with OpenCLIP and LLaVA 1.5 in ``/cvlms/demo/demo.ipynb`` and ``/lvlms/demo/demo.ipynb``, respectively.
+
+## Pre-trained Models
+
+The pre-trained VL-SAE is provided in [ModelScope](https://www.modelscope.cn/models/ssfgunner/VL-SAE/).
+
+| Base Model        | Download                                                     |
+| ----------------- | ------------------------------------------------------------ |
+| OpenCLIP-ViT-B/32 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/openclip_ViT-B-32_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/c2d_openclip_ViT-B-32_256_8.json) |
+| OpenCLIP-ViT-B/16 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-16/openclip_ViT-B-16_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-16/c2d_openclip_ViT-B-16_256_8.json) |
+| OpenCLIP-ViT-L/14 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-L-14/openclip_ViT-L-14_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-L-14/c2d_openclip_ViT-L-14_256_8.json) |
+| OpenCLIP-ViT-H/14 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-H-14/openclip_ViT-H-14_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-H-14/c2d_openclip_ViT-H-14_256_8.json) |
+| LLaVA-1.5-7B      | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_256_8_best.pth), [Auxiliary AE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_aux_best.pt), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/c2d_llava_256_8.json) |
 
 ## Training
 
-This repo supports the construction of VL-SAE for [LLaVA-1.5](https://huggingface.co/liuhaotian/llava-v1.5-7b) and [OpenCLIP](https://www.google.com/search?client=safari&rls=en&q=openclip+github&ie=UTF-8&oe=UTF-8).
+This repo supports the construction of VL-SAE for [LLaVA-1.5](https://huggingface.co/liuhaotian/llava-v1.5-7b) and [OpenCLIP](https://github.com/mlfoundations/open_clip).
 
 First, collect the hidden representations of pre-trained models:
 
@@ -50,7 +64,7 @@ cd ./${model_type}/representation_collection
 bash get_activations.sh
 ```
 
-With a single NVIDIA RTX 4090, this step takes approximately 5 hours for OpenCLIP and 4 days for LLaVA. If you wish to skip this step, you can download the pre-computed features of [OpenCLIP]() and [LLaVA](), then place them under `VL-SAE/cvlms/representation_collection/activations` and `VL-SAE/lvlms/representation_collection/activations`, respectively.
+With a single NVIDIA RTX 4090, this step takes approximately 5 hours for OpenCLIP and 4 days for LLaVA. 
 
 Then, train VL-SAE based on the collected representations:
 
@@ -76,7 +90,7 @@ Each concept is represented by a set of images stored in the corresponding folde
 
 ### Quantitive Results
 
-With the visualizations of concepts, their inter-similarity score and intra-similarity score can be computed using CLIP embeddings.
+After the visualizations of concepts, their inter-similarity score and intra-similarity score can be computed using CLIP embeddings.
 
 ```bash
 python eval.py --target-dir ./concept_images/vlsae_ViT-B-32_256
@@ -92,25 +106,25 @@ Finally, generate a JSON file for the trained SAE, which stores the index of eac
 python concept2data.py --topk 256 --ckpt-path ../sae_trainer/sae_weights/openclip_ViT-B-32_VL_SAE_256_8_best.pth
 ```
 
-## Pre-trained Models
+## Application: Eliminating Hallucination for LVLMs
 
-| Base Model        | Top-K | Hidden-Ratio | Download          |
-| ----------------- | ----- | ------------ | ----------------- |
-| OpenCLIP-ViT-B/32 | 256   | 8            | [Model-Weights]() |
-| OpenCLIP-ViT-B/16 | 256   | 8            | [Model-Weights]() |
-| OpenCLIP-ViT-L/14 | 256   | 8            | [Model-Weights]() |
-| OpenCLIP-ViT-H/14 | 256   | 8            | [Model-Weights]() |
-| LLaVA-1.5-7B      | 256   | 8            | [Model-Weights]() |
+Integrate the pre-trained VL-SAE into the inference process of LLaVA 1.5 to eliminate hallucinations.
 
-## Enhancing Vision-Language Alignment
+First, download the validation images & annotations of COCO 2014 and put it under ``lvlms/VCD/data/coco``.
 
-### Zero-shot Image Classification
+Then, run the provided scripts to evaluate the performance of VL-SAE on different benchmarks.
 
+```bash
+cd lvlms/VCD/experiments
+# For POPE benchmark
+bash cd_scripts/llava1.5_pope.sh 
+# For CHAIR benchmark
+bash cd_scripts/llava1.5_chair.sh
+```
 
+![pope](./figure/pope.png)
 
-### Hallucination Elimination
-
-
+![chair](./figure/chair.png)
 
 ## Citation
 
@@ -127,7 +141,7 @@ If you find VL-SAE useful for your research and applications, please cite using 
 
 ## Related Projects
 
-[OpenCLIP]() 
+- [OpenCLIP](https://github.com/mlfoundations/open_clip) 
 
-[VCD]()
+- [VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding](https://github.com/DAMO-NLP-SG/VCD)
 

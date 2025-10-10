@@ -9,3 +9,6 @@ accelerate==0.21.0
 scikit-learn
 jupyter
 matplotlib
+nltk
+pycocoevalcap
+pytest

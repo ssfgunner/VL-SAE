@@ -5,8 +5,8 @@ hidden_ratio=${3:-"8"}
 save_path=${4:-"./sae_weights"}
 text_embeddings_path=${5:-"../representation_collection/activations/ViT-B-32_text_embeddings.pt"}
 image_embeddings_path=${6:-"../representation_collection/activations/ViT-B-32_vision_embeddings.pt"}
-
+initial_lr=${7:-"1e-3"}
 python train.py --pretrained_model ${pretrained_model} \
     --topk ${topk} --hidden_ratio ${hidden_ratio} --save_path ${save_path} \
     --text_embeddings_path ${text_embeddings_path} --image_embeddings_path ${image_embeddings_path} \
-    --initial_lr 1e-3
+    --initial_lr ${initial_lr} 
