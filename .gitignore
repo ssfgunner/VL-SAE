@@ -1,4 +1,5 @@
-CC3M/
+cc3m*/
+merged_cc3m.json
 *.pth
 *.pt
 *.pyc
