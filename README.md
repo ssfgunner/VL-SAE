@@ -31,13 +31,15 @@ python cc3m_meta.py
 
 ## Quick Start
 
-Download LLaVA 1.5 and put it under ``pretrained_models``
+Download LLaVA 1.5 and put it under ``./lvlms/pretrained_models``
 
 For OpenCLIP-ViT-B/32, download the pre-trained VL-SAE weights ([SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/openclip_ViT-B-32_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/c2d_openclip_ViT-B-32_256_8.json)) and put it under ``cvlms/demo``.
 
 For LLaVA 1.5, download the the pre-trained VL-SAE ([SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_256_8_best.pth), [Auxiliary AE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_aux_best.pt), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/c2d_llava_256_8.json)) and put it under ``lvlms/demo``.
 
 We present the demo of VL-SAE with OpenCLIP and LLaVA 1.5 in ``cvlms/demo/demo.ipynb`` and ``lvlms/demo/demo.ipynb``, respectively.
+
+Moreover, we provide scripts ``lvlms/demo/demo_inference.ipynb`` that incorporate the VL-SAE to modify the representations during the inference process of LVLMs.
 
 ## Pre-trained Models
 

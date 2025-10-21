@@ -10,5 +10,5 @@ save_path=${5:-"./activations"}
 python activation_collector.py --pretrained_model ${pretrained_model} --model_path ${model_path} \
    --text_path ${text_path} --save_path ${save_path}
 
-# python activation_collector.py --pretrained_model ${pretrained_model} --model_path ${model_path} \
-#    --image_path ${image_path} --save_path ${save_path}
+python activation_collector.py --pretrained_model ${pretrained_model} --model_path ${model_path} \
+   --image_path ${image_path} --save_path ${save_path}
