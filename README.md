@@ -1,6 +1,6 @@
 # [NeurIPS 2025] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set
 
-This repository is the official implementation of [VL-SAE](https://arxiv.org/abs/2030.12345), which helps users to understand the vision-language alignment of VLMs via concepts.
+This repository is the official implementation of [VL-SAE](https://arxiv.org/abs/2510.21323), which helps users to understand the vision-language alignment of VLMs via concepts.
 
 ## Requirements
 
