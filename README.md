@@ -23,7 +23,7 @@ Install CC3M dataset from [cc3m-wds](https://huggingface.co/datasets/pixparse/cc
 
 Running the provided scripts to preprocess the dataset:
 
-``` bash
+``` bash
 bash cc3m_untar.sh
 python cc3m_moving.py
 python cc3m_meta.py
@@ -43,15 +43,15 @@ Moreover, we provide scripts ``lvlms/demo/demo_inference.ipynb`` that incorporat
 
 ## Pre-trained Models
 
-The pre-trained VL-SAE is provided in [ModelScope](https://www.modelscope.cn/models/ssfgunner/VL-SAE/).
+The pre-trained VL-SAE is provided in [ModelScope](https://www.modelscope.cn/models/ssfgunner/VL-SAE/) and [HuggingFace](https://huggingface.co/shufanshen/VL-SAE).
 
-| Base Model        | Download                                                     |
-| ----------------- | ------------------------------------------------------------ |
-| OpenCLIP-ViT-B/32 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/openclip_ViT-B-32_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/c2d_openclip_ViT-B-32_256_8.json) |
-| OpenCLIP-ViT-B/16 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-16/openclip_ViT-B-16_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-16/c2d_openclip_ViT-B-16_256_8.json) |
-| OpenCLIP-ViT-L/14 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-L-14/openclip_ViT-L-14_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-L-14/c2d_openclip_ViT-L-14_256_8.json) |
-| OpenCLIP-ViT-H/14 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-H-14/openclip_ViT-H-14_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-H-14/c2d_openclip_ViT-H-14_256_8.json) |
-| LLaVA-1.5-7B      | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_256_8_best.pth), [Auxiliary AE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_aux_best.pt), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/c2d_llava_256_8.json) |
+| Base Model        | ModelScope                                                   | HuggingFace                                                  |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| OpenCLIP-ViT-B/32 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/openclip_ViT-B-32_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-32/c2d_openclip_ViT-B-32_256_8.json) | [SAE weights](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-B-32/openclip_ViT-B-32_VL_SAE_256_8_best.pth?download=true), [metadata](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-B-32/c2d_openclip_ViT-B-32_256_8.json?download=true) |
+| OpenCLIP-ViT-B/16 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-16/openclip_ViT-B-16_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-B-16/c2d_openclip_ViT-B-16_256_8.json) | [SAE weights](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-B-16/openclip_ViT-B-16_VL_SAE_256_8_best.pth?download=true), [metadata](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-B-16/c2d_openclip_ViT-B-16_256_8.json?download=true) |
+| OpenCLIP-ViT-L/14 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-L-14/openclip_ViT-L-14_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-L-14/c2d_openclip_ViT-L-14_256_8.json) | [SAE weights](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-L-14/openclip_ViT-L-14_VL_SAE_256_8_best.pth?download=true), [metadata](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-L-14/c2d_openclip_ViT-L-14_256_8.json?download=true) |
+| OpenCLIP-ViT-H/14 | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-H-14/openclip_ViT-H-14_VL_SAE_256_8_best.pth), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/OpenCLIP-ViT-H-14/c2d_openclip_ViT-H-14_256_8.json) | [SAE weights](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-H-14/openclip_ViT-H-14_VL_SAE_256_8_best.pth?download=true), [metadata](https://huggingface.co/shufanshen/VL-SAE/resolve/main/OpenCLIP-ViT-H-14/c2d_openclip_ViT-H-14_256_8.json?download=true) |
+| LLaVA-1.5-7B      | [SAE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_256_8_best.pth), [Auxiliary AE weights](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/llava_aux_best.pt), [metadata](https://www.modelscope.cn/models/ssfgunner/VL-SAE/resolve/master/llava1.5/c2d_llava_256_8.json) | [SAE weights](https://huggingface.co/shufanshen/VL-SAE/resolve/main/llava1.5/llava_256_8_best.pth?download=true), [Auxiliary AE weights](https://huggingface.co/shufanshen/VL-SAE/resolve/main/llava1.5/llava_aux_best.pt?download=true), [metadata](https://huggingface.co/shufanshen/VL-SAE/resolve/main/llava1.5/c2d_llava_256_8.json?download=true) |
 
 ## Training
 
@@ -135,9 +135,12 @@ If you find VL-SAE useful for your research and applications, please cite using 
 ```latex
 @misc{shen2025vlsae,
       title={VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set}, 
-      author={Shen, Shufan and Sun, Junshu, and Huang, Qingming and Wang, Shuhui},
-      publisher={NeurIPS},
+      author={Shufan Shen and Junshu Sun and Qingming Huang and Shuhui Wang},
       year={2025},
+      eprint={2510.21323},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2510.21323}, 
 }
 ```
 
@@ -145,5 +148,4 @@ If you find VL-SAE useful for your research and applications, please cite using 
 
 - [OpenCLIP](https://github.com/mlfoundations/open_clip) 
 
-- [VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding](https://github.com/DAMO-NLP-SG/VCD)
-
+- [VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding](
