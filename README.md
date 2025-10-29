@@ -148,4 +148,4 @@ If you find VL-SAE useful for your research and applications, please cite using 
 
 - [OpenCLIP](https://github.com/mlfoundations/open_clip) 
 
-- [VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding](
+- [VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding](https://github.com/DAMO-NLP-SG/VCD)
