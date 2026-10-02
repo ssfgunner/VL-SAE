@@ -74,3 +74,6 @@ node_modules
 
 #vscode 
 .vscode
+# local workdirs (not for release)
+/qwen/
+/CC3M/

@@ -41,6 +41,8 @@ We present the demo of VL-SAE with OpenCLIP and LLaVA 1.5 in ``cvlms/demo/demo.i
 
 Moreover, we provide scripts ``lvlms/demo/demo_inference.ipynb`` that incorporate the VL-SAE to modify the representations during the inference process of LVLMs.
 
+For **Qwen2.5-VL** (decoder-layer-26 collection, linear/cosine encoder variants, concept audit/eval/demos, QA-slice grounding tests), see ``lvlms/qwen``.
+
 ## Pre-trained Models
 
 The pre-trained VL-SAE is provided in [ModelScope](https://www.modelscope.cn/models/ssfgunner/VL-SAE/) and [HuggingFace](https://huggingface.co/shufanshen/VL-SAE).
