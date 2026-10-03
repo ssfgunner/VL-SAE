@@ -55,11 +55,3 @@ python train_qwen_sae.py --layer 26 --skip-aux --sae-epochs 30 \
 
 Note: the aux `projection_dim` is set to the feature dim (2048 here) — the
 upstream default of 4096 matches the LLaVA hidden size, not Qwen2.5-VL-3B.
-
-## Notes from our runs (2.9M CC3M pairs, Qwen2.5-VL-3B, layer 26)
-
-- **Aux training budget matters.** With a short aux schedule the cosine
-  encoder collapses (near-zero semantically evaluable concepts); with the
-  full 50-epoch paper recipe it becomes semantically evaluable. A large
-  share of the cosine encoder's apparent weakness is an aux-undertraining
-  artifact, not an architecture flaw.
